@@ -9,7 +9,7 @@ function PepmUninstall (pkg="", args={}) {
         noSave: (args.noSave) ? `--no-save` : "",           // no save
     };
 
-    let global = (args.global) ? `--global ` : "";           // global
+    let global = (args.global) ? `-g` : "";                 // global
 
 
     // command info
