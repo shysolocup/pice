@@ -1,6 +1,6 @@
-const pepm = require('../index.js');
+const pice = require('../index.js');
 
-function PepmInstall (pkg="", args={}) {
+function PiceInstall (pkg="", args={}) {
 
     // arguments
     let argList = {
@@ -85,4 +85,4 @@ let aliases = [
     "insta", "instal", "isnt", 
     "isnta", "isntal", "isntall" 
 ];
-aliases.forEach( a => pepm.newF(a, PepmInstall));
+aliases.forEach( a => pice.newF(a, PiceInstall));
