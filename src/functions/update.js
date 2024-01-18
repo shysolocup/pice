@@ -9,7 +9,7 @@ function PiceUpdate(pkg="", args={}) {
 
 
     // sync executor
-    if (args.sync || !args.async) com.executor = this.exec(comStr);
+    if (args.sync || !args.async) com.__executor = this.exec(comStr);
 
 
     // async executor
@@ -18,16 +18,16 @@ function PiceUpdate(pkg="", args={}) {
 
         setImmediate( () => {
             try {
-                com.executor = this.execAsync(comStr)
+                com.__executor = this.execAsync(comStr)
                 
-                com.executor.then( () => {
+                com.__executor.then( () => {
                     if (com.__listeners.then.length > 0) {
                         let req = require(pkg);
                         com.__listeners.then.forEach( f => f(req, com) );
                     }
                 });
 
-                com.executor.finally( () => {
+                com.__executor.finally( () => {
                     if (com.__listeners.finally.length > 0) {
                         let req = require(pkg);
                         com.__listeners.finally.forEach( f => f(req, com) );
