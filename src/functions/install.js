@@ -4,13 +4,14 @@ function PepmInstall (pkg="", args={}) {
 
     // arguments
     let argList = {
-        version: (args.version) ? `@${args.version}` : "",   // version
-        dev: (args.dev) ? `--save-dev` : "",             // save dev
-        prod: (args.prod) ? `--save-prod` : "",           // save prod
-        optional: (args.optional) ? `--save-optional` : "",   // save optional
-        noSave: (args.noSave) ? `--no-save` : "",           // no save
-        exact: (args.exact) ? `--save-exact` : "",         // save exact
-        bundle: (args.bundle) ? `---save-bundle` : "",      // save bundle
+        version: (args.version) ? `@${args.version}` : "",      // version
+        tag: (args.tag) ? `@${args.tag}` : "",                  // tag
+        dev: (args.dev) ? `--save-dev` : "",                    // save dev
+        prod: (args.prod) ? `--save-prod` : "",                 // save prod
+        optional: (args.optional) ? `--save-optional` : "",     // save optional
+        noSave: (args.noSave) ? `--no-save` : "",               // no save
+        exact: (args.exact) ? `--save-exact` : "",              // save exact
+        bundle: (args.bundle) ? `---save-bundle` : "",          // save bundle
     };
 
 
