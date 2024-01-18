@@ -1,7 +1,4 @@
-const pepm = require('../index.js');
-
-
-function PepmUninstallAsync (pkg="", args={}) {
+function PiceUninstallAsync (pkg="", args={}) {
     args.async = true;
     return this.uninstall(pkg, args);
 }
@@ -12,4 +9,5 @@ let aliases = [
     "uninstallAsync", "unlinkAsync", "removeAsync", 
     "rmAsync", "rAsync", "unAsync"
 ];
-aliases.forEach( a => pepm.newF(a, PepmUninstallAsync));
+const pice = require('../index.js');
+aliases.forEach( a => pice.newF(a, PiceUninstallAsync));
