@@ -21,7 +21,16 @@ function PepmUpdate(pkg="", args={}) {
 
         setImmediate( () => {
             try {
-                com.executor = this.exec(comStr);
+                com.executor = this.execAsync(comStr)
+                
+                com.executor.then( () => {
+                    if (com.__listeners.then.length > 0) {
+                        (async () => {
+                            let req = require(pkg);
+                            com.__listeners.then.forEach( f => f(req, com) );
+                        })()
+                    }
+                });
             } catch(e) {
                 if (com.__listeners.catch.length > 0) {
                     com.__listeners.catch.forEach( f => f(e) );
@@ -33,19 +42,16 @@ function PepmUpdate(pkg="", args={}) {
 
 
     // then
-    setImmediate( () => {
+    if (!com.async) setImmediate( () => {
         if (com.__listeners.then.length > 0) {
-            let req = require(pkg);
-            com.__listeners.then.forEach( f => f(req, com) );
+            (async () => {
+                let req = require(pkg);
+                com.__listeners.then.forEach( f => f(req, com) );
+            })()
         }
     });
 
-    let ret = undefined
-
-    if (com.async) setImmediate( () => { ret = com });
-    else ret = com;
-
-    return ret;
+    return com;
 }
 
 
