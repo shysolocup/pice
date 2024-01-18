@@ -1,2 +1,4 @@
 # pepm
-An npm package that lets you install other npm packages with code
+Node.JS Package that lets you run commands and install packages directly from your code
+
+
