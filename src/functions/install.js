@@ -36,11 +36,16 @@ function PepmInstall (pkg="", args={}) {
                 
                 com.executor.then( () => {
                     if (com.__listeners.then.length > 0) {
-                        (async () => {
-                            let req = require(pkg);
-                            com.__listeners.then.forEach( f => f(req, com) );
-                        })()
+                        let req = require(pkg);
+                        com.__listeners.then.forEach( f => f(req, com) );
                     }
+                });
+
+                com.executor.finally( () => {
+                    if (com.__listeners.finally.length > 0) {
+                        let req = require(pkg);
+                        com.__listeners.finally.forEach( f => f(req, com) );
+                    } 
                 });
             } catch(e) {
                 if (com.__listeners.catch.length > 0) {
@@ -52,12 +57,19 @@ function PepmInstall (pkg="", args={}) {
     }
 
 
-    // then
+    // then and finally
     if (!com.async) setImmediate( () => {
         if (com.__listeners.then.length > 0) {
             (async () => {
                 let req = require(pkg);
                 com.__listeners.then.forEach( f => f(req, com) );
+            })()
+        }
+
+        if (com.__listeners.finally.length > 0) {
+            (async () => {
+                let req = require(pkg);
+                com.__listeners.finally.forEach( f => f(req, com) );
             })()
         }
     });
