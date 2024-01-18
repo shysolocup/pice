@@ -6,7 +6,7 @@ function PiceRun (cmd="", args={}) {
 
 
     // sync executor
-    if (args.sync || !args.async) com.executor = this.exec(cmd);
+    if (args.sync || !args.async) com.__executor = this.exec(cmd);
 
 
     // async executor
@@ -15,15 +15,15 @@ function PiceRun (cmd="", args={}) {
 
         setImmediate( () => {
             try {
-                com.executor = this.execAsync(cmd)
+                com.__executor = this.execAsync(cmd)
                 
-                com.executor.then( () => {
+                com.__executor.then( () => {
                     if (com.__listeners.then.length > 0) {
                         com.__listeners.then.forEach( f => f(com) );
                     }
                 });
 
-                com.executor.finally( () => {
+                com.__executor.finally( () => {
                     if (com.__listeners.finally.length > 0) {
                         com.__listeners.finally.forEach( f => f(com) );
                     } 
