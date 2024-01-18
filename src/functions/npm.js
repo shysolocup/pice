@@ -1,6 +1,4 @@
-const pepm = require('../index.js');
-
-function PepmNpm (cmd="", args={}) {
+function PiceNpm (cmd="", args={}) {
 
     // command info
     let comStr = `npm ${cmd}`.replace(/\s+/g,' ').replace(/^\s+|\s+$/,'');
@@ -63,4 +61,5 @@ function PepmNpm (cmd="", args={}) {
 let aliases = [ 
     "npm"
 ];
-aliases.forEach( a => pepm.newF(a, PepmNpm));
+const pice = require('../index.js');
+aliases.forEach( a => pice.newF(a, PiceNpm));
