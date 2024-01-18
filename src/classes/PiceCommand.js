@@ -1,6 +1,6 @@
 const pepm = require('../index.js');
 
-pepm.newC("PepmCommand", class {
+pepm.newC("PiceCommand", class {
     constructor(string, pkg, argList, args) {
         this.str = string;
         this.pkg = pkg;
