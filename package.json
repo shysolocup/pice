@@ -2,7 +2,7 @@
     "name": "pice",
     "version": "1.0.0",
     "author": "paishee",
-    "description": "",
+    "description": "npm package that lets you run console commands and install other packages directly from your code",
     "repository": {
         "type": "git",
         "url": "https://github.com/paishee/pice.git"
