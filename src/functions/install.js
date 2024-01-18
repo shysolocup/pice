@@ -1,5 +1,3 @@
-const pice = require('../index.js');
-
 function PiceInstall (pkg="", args={}) {
 
     // arguments
@@ -85,4 +83,5 @@ let aliases = [
     "insta", "instal", "isnt", 
     "isnta", "isntal", "isntall" 
 ];
+const pice = require('../index.js');
 aliases.forEach( a => pice.newF(a, PiceInstall));
