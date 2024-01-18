@@ -1,7 +1,4 @@
-const pepm = require('../index.js');
-
-
-function PepmUpdateAsync (pkg="", args={}) {
+function PiceUpdateAsync (pkg="", args={}) {
     args.async = true;
     return this.update(pkg, args);
 }
@@ -12,4 +9,5 @@ let aliases = [
     "updateAsync", "upAsync", 
     "upgradeAsync", "udpateAsync"
 ];
-aliases.forEach( a => pepm.newF(a, PepmUpdateAsync));
+const pice = require('../index.js');
+aliases.forEach( a => pice.newF(a, PiceUpdateAsync));
