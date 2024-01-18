@@ -46,7 +46,7 @@ console.log(cmd)
 
 ```js
 PiceCommand {
-  cmd: 'npm install @stews/soup@1.1.22 --save-dev',
+  str: 'npm install @stews/soup@1.1.22 --save-dev',
   pkg: '@stews/soup',
   argsList: [Object],
   args: [Object],
