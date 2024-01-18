@@ -1,7 +1,4 @@
-const pepm = require('../index.js');
-
-
-function PepmNpmAsync (cmd="", args={}) {
+function PiceNpmAsync (cmd="", args={}) {
     args.async = true;
     return this.npm(cmd, args);
 }
@@ -11,4 +8,5 @@ function PepmNpmAsync (cmd="", args={}) {
 let aliases = [ 
     "npmAsync"
 ];
-aliases.forEach( a => pepm.newF(a, PepmNpmAsync));
+const pice = require('../index.js');
+aliases.forEach( a => pice.newF(a, PiceNpmAsync));
