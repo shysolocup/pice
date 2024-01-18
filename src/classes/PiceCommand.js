@@ -7,7 +7,7 @@ pepm.newC("PiceCommand", class {
         this.argsList = argList;
         this.args = args;
         this.async = false;
-        this.executor
+        this.__executor
 
         this.__listeners = {
             then: [],
