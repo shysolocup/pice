@@ -31,15 +31,13 @@ function PepmUninstall (pkg="", args={}) {
                 
                 com.executor.then( () => {
                     if (com.__listeners.then.length > 0) {
-                        let req = require(pkg);
-                        com.__listeners.then.forEach( f => f(req, com) );
+                        com.__listeners.then.forEach( f => f(com) );
                     }
                 });
 
                 com.executor.finally( () => {
                     if (com.__listeners.finally.length > 0) {
-                        let req = require(pkg);
-                        com.__listeners.finally.forEach( f => f(req, com) );
+                        com.__listeners.finally.forEach( f => f(com) );
                     } 
                 });
             } catch(e) {
@@ -56,15 +54,13 @@ function PepmUninstall (pkg="", args={}) {
     if (!com.async) setImmediate( () => {
         if (com.__listeners.then.length > 0) {
             (async () => {
-                let req = require(pkg);
-                com.__listeners.then.forEach( f => f(req, com) );
+                com.__listeners.then.forEach( f => f(com) );
             })()
         }
 
         if (com.__listeners.finally.length > 0) {
             (async () => {
-                let req = require(pkg);
-                com.__listeners.finally.forEach( f => f(req, com) );
+                com.__listeners.finally.forEach( f => f(com) );
             })()
         }
     });
