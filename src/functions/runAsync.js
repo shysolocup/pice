@@ -8,5 +8,5 @@ function PiceRunAsync (cmd="", args={}) {
 let aliases = [ 
     "runAsync"
 ];
-const pepm = require('../index.js');
+const pice = require('../index.js');
 aliases.forEach( a => pice.newF(a, PiceRunAsync));
