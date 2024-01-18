@@ -26,10 +26,13 @@ npm i paishee/fndt
 ```js
 const pice = require('pice');
 
+
 // normal install may cause code to hang
 let cmd = pice.install("@stews/soup", { version: "1.1.22", dev: true });
 
+
 console.log(cmd)
+
 
 cmd.then( (Soup) => {
     console.log(Soup);
