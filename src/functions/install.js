@@ -14,7 +14,7 @@ function PepmInstall (pkg="", args={}) {
         bundle: (args.bundle) ? `---save-bundle` : "",          // save bundle
     };
 
-    let global = (args.global) ? `-g` : "";              // global
+    let global = (args.global) ? `-g` : "";                     // global
 
 
     // command info
