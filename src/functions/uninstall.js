@@ -13,7 +13,7 @@ function PepmUninstall (pkg="", args={}) {
 
 
     // command info
-    let comStr = `npm uninstall ${global} ${pkg} ${Object.values(argList).join(" ")}`;
+    let comStr = `npm uninstall ${global} ${pkg} ${Object.values(argList).join(" ")}`.replace(/\s+/g,' ').replace(/^\s+|\s+$/,'');
     let com = new this.PepmCommand(comStr, pkg, argList, args);
 
 
