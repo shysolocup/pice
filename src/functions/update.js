@@ -7,7 +7,7 @@ function PepmUpdate(pkg="", args={}) {
 
 
     // command info
-    let comStr = `npm update ${global} ${pkg}`;
+    let comStr = `npm update ${global} ${pkg}`.replace(/\s+/g,' ').replace(/^\s+|\s+$/,'');
     let com = new this.PepmCommand(comStr, pkg, {}, args);
 
 
