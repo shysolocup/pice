@@ -1,7 +1,4 @@
-const pepm = require('../index.js');
-
-
-function PepmUninstall (pkg="", args={}) {
+function PiceUninstall (pkg="", args={}) {
 
     // arguments
     let argList = {
@@ -14,7 +11,7 @@ function PepmUninstall (pkg="", args={}) {
 
     // command info
     let comStr = `npm uninstall ${global} ${pkg} ${Object.values(argList).join(" ")}`.replace(/\s+/g,' ').replace(/^\s+|\s+$/,'');
-    let com = new this.PepmCommand(comStr, pkg, argList, args);
+    let com = new this.PiceCommand(comStr, pkg, argList, args);
 
 
     // sync executor
@@ -74,4 +71,5 @@ let aliases = [
     "uninstall", "unlink", "remove", 
     "rm", "r", "un"
 ];
-aliases.forEach( a => pepm.newF(a, PepmUninstall));
+const pice = require('../index.js');
+aliases.forEach( a => pice.newF(a, PiceUninstall));
