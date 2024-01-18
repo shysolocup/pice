@@ -17,7 +17,7 @@ function PiceInstall (pkg="", args={}) {
 
     // command info
     let comStr = `npm install ${global} ${pkg} ${ Object.values(argList).join(" ")}`.replace(/\s+/g,' ').replace(/^\s+|\s+$/,'');
-    let com = new this.PepmCommand(comStr, pkg, argList, args);
+    let com = new this.PiceCommand(comStr, pkg, argList, args);
 
 
     // sync executor
