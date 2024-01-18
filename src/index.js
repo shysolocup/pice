@@ -1,4 +1,4 @@
-// pepm // Program-Encased Package Manager
+// Pice // Package Installer by Code Execution
 // made by @paishee
 
 
@@ -7,7 +7,7 @@ const aepl = require('aepl');
 const util = require('util');
 
 
-const pepm = aepl.init("Pepm", class {
+const pice = aepl.init("Pice", class {
 
     constructor() {
         let cpro = require('child_process');
@@ -18,7 +18,7 @@ const pepm = aepl.init("Pepm", class {
 });
 
 
-module.exports = new pepm;
+module.exports = new pice;
 
 
 let dirs = [ "classes", "functions" ];
