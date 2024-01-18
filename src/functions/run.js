@@ -1,6 +1,7 @@
 const pepm = require('../index.js');
 
 function PepmRun (cmd="", args={}) {
+    cmd = cmd.replace(/\s+/g,' ').replace(/^\s+|\s+$/,'');
 
     // command info
     let com = new this.PepmCommand(cmd, "", {}, args);
