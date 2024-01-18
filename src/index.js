@@ -2,14 +2,17 @@
 // made by @paishee
 
 
-const aepl = require('aepl');
 const compile = require('./compile.js');
+const aepl = require('aepl');
+const util = require('util');
 
 
 const pepm = aepl.init("Pepm", class {
 
     constructor() {
-        this.exec = require('child_process').execSync;
+        let cpro = require('child_process');
+        this.exec = cpro.execSync;
+        this.execAsync = util.promisify(cpro.exec);
     }
 
 });
