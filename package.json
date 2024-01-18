@@ -16,6 +16,6 @@
     },
     "dependencies": {
          "aepl": "latest"
-    }
+    },
     "main": "./src/index.js"
 }
