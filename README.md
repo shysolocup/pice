@@ -52,7 +52,7 @@ PiceCommand {
   str: 'npm install @stews/soup@1.1.22 --save-dev',
   pkg: '@stews/soup',
   argsList: [Object],
-  args: { version: '1.1.22', dev: true },
+  args: [Object],
   async: false,
   __listeners: [Object],
   __executor: [Buffer]
