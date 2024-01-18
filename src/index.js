@@ -9,8 +9,7 @@ const compile = require('./compile.js');
 const pepm = aepl.init("Pepm", class {
 
     constructor() {
-        const { execSync, exec } = require('child_process');
-        [ this.execSync, this.execAsync ] = [ execSync, exec ];
+        this.exec = require('child_process').execSync;
     }
 
 });
