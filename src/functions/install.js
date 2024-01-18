@@ -14,9 +14,11 @@ function PepmInstall (pkg="", args={}) {
         bundle: (args.bundle) ? `---save-bundle` : "",          // save bundle
     };
 
+    let global = (args.global) ? `-g` : "";              // global
+
 
     // command info
-    let comStr = `npm install ${pkg} ${ Object.values(argList).join(" ")}`;
+    let comStr = `npm install ${global} ${pkg} ${ Object.values(argList).join(" ")}`;
     let com = new this.PepmCommand(comStr, pkg, argList, args);
 
 
