@@ -53,7 +53,7 @@ PiceCommand {
   pkg: '@stews/soup',
   argsList: [Object],
   args: { version: '1.1.22', dev: true },
-  async: false,
+  isAsync: false,
   __listeners: [Object],
   __executor: [Buffer]
 }
