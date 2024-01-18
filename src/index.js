@@ -1,4 +1,4 @@
-// Pice // Package Installer by Code Execution
+// Pice // Package Installer from Code Execution
 // made by @paishee
 
 
