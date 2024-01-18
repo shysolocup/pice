@@ -1,7 +1,4 @@
-const pepm = require('../index.js');
-
-
-function PepmInstallAsync (pkg="", args={}) {
+function PiceInstallAsync (pkg="", args={}) {
     args.async = true;
     return this.install(pkg, args);
 }
@@ -14,4 +11,5 @@ let aliases = [
     "instaAsync", "instalAsync", "isntAsync", 
     "isntaAsync", "isntalAsync", "isntallAsync" 
 ];
-aliases.forEach( a => pepm.newF(a, PepmInstallAsync));
+const pice = require('../index.js');
+aliases.forEach( a => pice.newF(a, PiceInstallAsync));
