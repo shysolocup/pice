@@ -1,14 +1,11 @@
-const pepm = require('../index.js');
-
-
-function PepmUpdate(pkg="", args={}) {
+function PiceUpdate(pkg="", args={}) {
 
     let global = (args.global) ? `-g` : "";           // global
 
 
     // command info
     let comStr = `npm update ${global} ${pkg}`.replace(/\s+/g,' ').replace(/^\s+|\s+$/,'');
-    let com = new this.PepmCommand(comStr, pkg, {}, args);
+    let com = new this.PiceCommand(comStr, pkg, {}, args);
 
 
     // sync executor
@@ -72,4 +69,5 @@ let aliases = [
     "update", "up", 
     "upgrade", "udpate"
 ];
-aliases.forEach( a => pepm.newF(a, PepmUpdate));
+const pice = require('../index.js');
+aliases.forEach( a => pice.newF(a, PiceUpdate));
