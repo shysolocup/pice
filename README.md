@@ -31,12 +31,13 @@ const pice = require('pice');
 let cmd = pice.install("@stews/soup", { version: "1.1.22", dev: true });
 
 
-console.log(cmd)
-
-
+// you can use then to get the installed package automatically
 cmd.then( (Soup) => {
     console.log(Soup);
 });
+
+
+console.log(cmd)
 ```
 
 </td>
@@ -44,6 +45,8 @@ cmd.then( (Soup) => {
 <td>
 
 ```js
+[class Soup]
+
 PiceCommand {
   str: 'npm install @stews/soup@1.1.22 --save-dev',
   pkg: '@stews/soup',
@@ -53,8 +56,6 @@ PiceCommand {
   __listeners: [Object],
   __executor: [Buffer]
 }
-
-[class Soup]
 ```
   
 </td>
