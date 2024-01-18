@@ -1,10 +1,8 @@
-const pepm = require('../index.js');
-
-function PepmRun (cmd="", args={}) {
+function PiceRun (cmd="", args={}) {
     cmd = cmd.replace(/\s+/g,' ').replace(/^\s+|\s+$/,'');
 
     // command info
-    let com = new this.PepmCommand(cmd, "", {}, args);
+    let com = new this.PiceCommand(cmd, "", {}, args);
 
 
     // sync executor
@@ -63,4 +61,5 @@ function PepmRun (cmd="", args={}) {
 let aliases = [ 
     "run"
 ];
-aliases.forEach( a => pepm.newF(a, PepmRun));
+const pice = require('../index.js');
+aliases.forEach( a => pice.newF(a, PiceRun));
