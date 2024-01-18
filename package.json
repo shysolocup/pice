@@ -1,18 +1,18 @@
 {
-    "name": "pepm",
+    "name": "unin",
     "version": "1.0.0",
     "author": "paishee",
     "description": "",
     "repository": {
         "type": "git",
-        "url": "https://github.com/paishee/pepm.git"
+        "url": "https://github.com/paishee/unin.git"
     },
     "bugs": {
-        "url": "https://github.com/paishee/pepm/issues"
+        "url": "https://github.com/paishee/unin/issues"
     },
     "license": {
         "type": "MIT",
-        "url": "https://github.com/paishee/pepm/blob/main/LICENSE"
+        "url": "https://github.com/paishee/unin/blob/main/LICENSE"
     },
     "dependencies": {
          "aepl": "latest"
