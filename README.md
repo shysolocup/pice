@@ -8,10 +8,10 @@ npm package that lets you run console commands and install other packages direct
 <br>
 
 ```console
-npm i fndt
+npm i pice
 ```
 ```console
-npm i paishee/fndt
+npm i paishee/pice
 ```
 
 <br>
