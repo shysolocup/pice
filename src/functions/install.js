@@ -22,9 +22,25 @@ function PepmInstall (pkg="", args={}) {
     let com = new this.PepmCommand(comStr, pkg, argList, args);
 
 
-    // executor
-    if (args.sync || !args.async) com.executor = this.execSync(comStr);
-    else if (args.async) { com.async = true; com.executor = this.execAsync(comStr); }
+    // sync executor
+    if (args.sync || !args.async) com.executor = this.exec(comStr);
+
+
+    // async executor
+    else if (args.async) {
+        com.async = true;
+
+        setImmediate( () => {
+            try {
+                com.executor = this.exec(comStr);
+            } catch(e) {
+                if (com.__listeners.catch.length > 0) {
+                    com.__listeners.catch.forEach( f => f(e) );
+                }
+                else throw e;
+            }
+        })
+    }
 
 
     // then
@@ -35,8 +51,12 @@ function PepmInstall (pkg="", args={}) {
         }
     });
 
+    let ret = undefined
 
-    return com;
+    if (com.async) setImmediate( () => { ret = com });
+    else ret = com;
+
+    return ret;
 }
 
 
