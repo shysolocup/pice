@@ -3,7 +3,7 @@ const pepm = require('../index.js');
 
 function PepmUpdate(pkg="", args={}) {
 
-    let global = (args.global) ? `--global ` : "";           // global
+    let global = (args.global) ? `--global` : "";           // global
 
 
     // command info
