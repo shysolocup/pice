@@ -1,0 +1,21 @@
+{
+    "name": "pepm",
+    "version": "1.0.0",
+    "author": "paishee",
+    "description": "",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/paishee/pepm.git"
+    },
+    "bugs": {
+        "url": "https://github.com/paishee/pepm/issues"
+    },
+    "license": {
+        "type": "MIT",
+        "url": "https://github.com/paishee/pepm/blob/main/LICENSE"
+    },
+    "dependencies": {
+         "aepl": "latest"
+    }
+    "main": "./src/index.js"
+}
