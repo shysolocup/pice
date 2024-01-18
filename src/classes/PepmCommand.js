@@ -10,11 +10,18 @@ pepm.newC("PepmCommand", class {
         this.executor
 
         this.__listeners = {
-            then: []
+            then: [],
+            catch: []
         };
     }
 
     then(f) {
-        this.__listeners.then.push(f)
+        this.__listeners.then.push(f);
+        return this;
+    }
+
+    catch(f) {
+        this.__listeners.catch.push(f);
+        return this;
     }
 });
