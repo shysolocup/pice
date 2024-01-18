@@ -2,8 +2,6 @@ function PiceInstall (pkg="", args={}) {
 
     // arguments
     let argList = {
-        version: (args.version) ? `@${args.version}` : "",      // version
-        tag: (args.tag) ? `@${args.tag}` : "",                  // tag
         dev: (args.dev) ? `--save-dev` : "",                    // save dev
         prod: (args.prod) ? `--save-prod` : "",                 // save prod
         optional: (args.optional) ? `--save-optional` : "",     // save optional
@@ -12,11 +10,13 @@ function PiceInstall (pkg="", args={}) {
         bundle: (args.bundle) ? `---save-bundle` : "",          // save bundle
     };
 
+    let version = (args.version) ? `@${args.version}` : "";     // version
+    let tag = (args.tag) ? `@${args.tag}` : "";                 // tag
     let global = (args.global) ? `-g` : "";                     // global
 
 
     // command info
-    let comStr = `npm install ${global} ${pkg} ${ Object.values(argList).join(" ")}`.replace(/\s+/g,' ').replace(/^\s+|\s+$/,'');
+    let comStr = `npm install ${global} ${pkg}${version}${tag} ${ Object.values(argList).join(" ")}`.replace(/\s+/g,' ').replace(/^\s+|\s+$/,'');
     let com = new this.PiceCommand(comStr, pkg, argList, args);
 
 
