@@ -46,12 +46,19 @@ function PepmUpdate(pkg="", args={}) {
     }
 
 
-    // then
+    // then and finally
     if (!com.async) setImmediate( () => {
         if (com.__listeners.then.length > 0) {
             (async () => {
                 let req = require(pkg);
                 com.__listeners.then.forEach( f => f(req, com) );
+            })()
+        }
+
+        if (com.__listeners.finally.length > 0) {
+            (async () => {
+                let req = require(pkg);
+                com.__listeners.finally.forEach( f => f(req, com) );
             })()
         }
     });
