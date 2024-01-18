@@ -45,9 +45,6 @@ console.log(cmd)
 <td>
 
 ```js
-[class Soup]
-
-
 PiceCommand {
   str: 'npm install @stews/soup@1.1.22 --save-dev',
   pkg: '@stews/soup',
@@ -57,6 +54,9 @@ PiceCommand {
   __listeners: [Object],
   __executor: [Buffer]
 }
+
+
+[class Soup]
 ```
   
 </td>
