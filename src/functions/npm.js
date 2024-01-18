@@ -3,7 +3,7 @@ const pepm = require('../index.js');
 function PepmNpm (cmd="", args={}) {
 
     // command info
-    let comStr = `npm ${cmd}`.replace(/\s+/g,' ').replace(/^\s+|\s+$/,'');;
+    let comStr = `npm ${cmd}`.replace(/\s+/g,' ').replace(/^\s+|\s+$/,'');
     let com = new this.PepmCommand(cmd, "", {}, args);
 
 
