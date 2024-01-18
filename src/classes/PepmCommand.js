@@ -11,7 +11,8 @@ pepm.newC("PepmCommand", class {
 
         this.__listeners = {
             then: [],
-            catch: []
+            catch: [],
+            finally: []
         };
     }
 
@@ -22,6 +23,11 @@ pepm.newC("PepmCommand", class {
 
     catch(f) {
         this.__listeners.catch.push(f);
+        return this;
+    }
+
+    finally(f) {
+        this.__listeners.finally.push(f);
         return this;
     }
 });
